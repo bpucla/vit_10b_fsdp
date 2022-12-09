@@ -142,7 +142,8 @@ class FSDPViTModel(nn.Module):
             _init_vit_weights(block)  # note: init module weights BEFORE wrapping with FSDP
             # note: to use gradient checkpointing, wrap the module with gradient checkpointing
             # wrapper BEFORE wrapping it with FSDP
-            block = fsdp_wrap(grad_ckpt_wrap(block))
+#             block = fsdp_wrap(grad_ckpt_wrap(block))
+            block = grad_ckpt_wrap(block)
             blocks.append(block)
             xm.master_print(f"built ViT block {idx}")
         self.blocks = nn.Sequential(*blocks)
