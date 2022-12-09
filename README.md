@@ -86,7 +86,7 @@ cd ${HOME} && gcloud compute config-ssh --quiet
 
 3. Now we can run the experiments. For example, to train a ViT model with 10 billion parameters (5120 embed dim, 32 attention heads, 32 layers, and an MLP ratio of 4.0 that gives 20480 = 5120 * 4.0 feed-forward MLP dim), you can launch the following in a tmux session.
 ```bash
-TPU_NAME=rh-128-0  # change to your TPU name
+TPU_NAME=sfr-b-pang-tpu-32-us-east1-1  # change to your TPU name
 SAVE_DIR=~/vit_10b_fsdp_example_ckpts  # this can be any directory (it doesn't need to be a shared one across nodes)
 
 mkdir -p ${SAVE_DIR}
