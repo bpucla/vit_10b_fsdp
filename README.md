@@ -9,9 +9,9 @@ This repo implements sharded training of a Vision Transformer (ViT) model on a 1
 1. Allocate a v3-128 TPU VM pod (e.g. with name `rh-128-0` in zone `europe-west4-a`) from the `tpu-vm-pt-1.12` environment as follows according to TPU VM [instruction](https://cloud.google.com/tpu/docs/run-calculation-pytorch). You can also try out larger TPU pods such as v3-256 or v3-512.
 
 ```bash
-TPU_NAME=rh-128-0  # change to your TPU name
-ZONE=europe-west4-a  # change to your TPU zone
-ACCELERATOR_TYPE=v3-128  # you can also try out larger TPU pods
+TPU_NAME=sfr-b-pang-tpu-32-us-east1-1  # change to your TPU name
+ZONE=us-east1-d  # change to your TPU zone
+ACCELERATOR_TYPE=v3-32  # you can also try out larger TPU pods
 RUNTIME_VERSION=tpu-vm-pt-1.12  # the XLA FSDP interface is supported in PyTorch/XLA
 
 gcloud alpha compute tpus tpu-vm create ${TPU_NAME} \
@@ -23,8 +23,8 @@ gcloud alpha compute tpus tpu-vm create ${TPU_NAME} \
 2. Install `timm` as a dependency (to create vision transformer layers) and clone this repository to all TPU VM nodes as follows.
 
 ```bash
-TPU_NAME=rh-128-0  # change to your TPU name
-ZONE=europe-west4-a  # change to your TPU zone
+TPU_NAME=sfr-b-pang-tpu-32-us-east1-1  # change to your TPU name
+ZONE=us-east1-d  # change to your TPU zone
 
 gcloud alpha compute tpus tpu-vm ssh ${TPU_NAME} --zone ${ZONE} \
   --worker all \
