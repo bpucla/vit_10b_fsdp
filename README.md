@@ -33,7 +33,7 @@ gcloud alpha compute tpus tpu-vm ssh ${TPU_NAME} --zone ${ZONE} \
 sudo pip3 install timm==0.4.12
 
 # clone this repo ViT FSDP example
-cd ~ && rm -rf vit_10b_fsdp_example && git clone https://github.com/ronghanghu/vit_10b_fsdp_example.git
+cd ~ && rm -rf vit_10b_fsdp_example && git clone https://github.com/bpucla/vit_10b_fsdp_example
 "
 ```
 
